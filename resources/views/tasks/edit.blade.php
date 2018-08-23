@@ -3,9 +3,9 @@
 @section('content')
 
 <!-- ここにページ毎のコンテンツを書く -->
-<h1>id: {{ $message->id }} タスク編集ページ</h1>
+<h1>id: {{ $task->id }} タスク編集ページ</h1>
 
-    {!! Form::model($message, ['route' => ['messages.update', $message->id], 'method' => 'put']) !!}
+    {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
 
         {!! Form::label('content', 'タスク:') !!}
         {!! Form::text('content') !!}
