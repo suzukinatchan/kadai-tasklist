@@ -28,7 +28,7 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
-//これはどのタイミングで動くルーター？
+//ログイン認証されているかどうかチェック→認証されたらリソース（get,post,put,deleteのCRUD、詳細ページ・新規作成用のHP・更新用のHPにアクセスできるルータの７種類のこと）
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('tasks','TasksController');
 });
